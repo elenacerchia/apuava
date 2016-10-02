@@ -37,7 +37,7 @@ apply plugin: 'signing'
 
 group = 'org.wisepersist'
 archivesBaseName = 'wisepersist-settings'
-version = '1.0.0-SNAPSHOT'
+version = '1.0.0'
 
 def skip_quality_check = project.hasProperty('check') && check == 'false'
 println("skip_quality_check: " + skip_quality_check)
