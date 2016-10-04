@@ -21,7 +21,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.wisepersist.settings.env.Env;
+import org.wisepersist.settings.env.EnvType;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -48,7 +48,7 @@ public abstract class AbstractSettings implements Settings { //NOPMD
    *
    * @param env The env of this settings.
    */
-  public AbstractSettings(final Env env) {
+  public AbstractSettings(final EnvType env) {
     this(env.getConfigFile());
   }
 

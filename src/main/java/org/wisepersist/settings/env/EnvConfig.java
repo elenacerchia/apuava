@@ -28,7 +28,7 @@ public interface EnvConfig {
    *
    * @return EnvironmentType of environment info.
    */
-  Env getEnv();
+  EnvType getEnv();
 
   /**
    * True is on production, otherwise false.

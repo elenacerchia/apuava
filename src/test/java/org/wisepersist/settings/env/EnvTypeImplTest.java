@@ -30,18 +30,18 @@ import static org.testng.Assert.assertTrue;
  *
  * @author jiakuan.wang@gmail.com
  */
-public class EnvTypeTest {
+public class EnvTypeImplTest {
 
   /**
    * Test if helper method fromString works properly.
    */
   @Test
   public final void testFromString_shouldHaveMatch() {
-    final Optional<Env> envOpt = EnvType.fromString(EnvType.DEV.getName());
+    final Optional<EnvType> envOpt = EnvTypeImpl.fromString(EnvTypeImpl.DEV.getName());
     Assert.assertTrue(envOpt.isPresent());
 
-    final Env env = envOpt.get();
-    assertEquals(EnvType.DEV, env);
+    final EnvType env = envOpt.get();
+    assertEquals(EnvTypeImpl.DEV, env);
   }
 
   /**
@@ -49,46 +49,46 @@ public class EnvTypeTest {
    */
   @Test
   public final void testFromString_shouldNotMatch() {
-    final Optional<Env> envOpt = EnvType.fromString("unknown");
+    final Optional<EnvType> envOpt = EnvTypeImpl.fromString("unknown");
     Assert.assertFalse(envOpt.isPresent());
   }
 
   /**
-   * Tests {@link EnvType#toString()} method.
+   * Tests {@link EnvTypeImpl#toString()} method.
    *
    * @throws Exception If uncaught errors occur.
    */
   @Test
   public final void testToString() throws Exception {
-    assertEquals(EnvType.PROD.toString(), EnvType.PROD.getName());
+    assertEquals(EnvTypeImpl.PROD.toString(), EnvTypeImpl.PROD.getName());
   }
 
   /**
-   * Tests {@link EnvType#getConfigFile()} method.
+   * Tests {@link EnvTypeImpl#getConfigFile()} method.
    *
    * @throws Exception If uncaught errors occur.
    */
   @Test
   public final void testGetConfigFile() throws Exception {
-    final String[] configFile = EnvType.PROD.getConfigFile();
+    final String[] configFile = EnvTypeImpl.PROD.getConfigFile();
     assertNotNull(configFile);
     assertTrue(configFile.length > 0);
   }
 
   /**
-   * Tests {@link EnvType#valueOf(String)} method.
+   * Tests {@link EnvTypeImpl#valueOf(String)} method.
    *
    * @throws Exception If uncaught errors occur.
    */
   @Test
   public final void testValueOf() throws Exception {
     // Given
-    final String name = EnvType.STAGE.name();
+    final String name = EnvTypeImpl.STAGE.name();
 
     // When
-    final EnvType envType = EnvType.valueOf(name);
+    final EnvTypeImpl envType = EnvTypeImpl.valueOf(name);
 
     // Then
-    assertEquals(envType, EnvType.STAGE);
+    assertEquals(envType, EnvTypeImpl.STAGE);
   }
 }

@@ -14,25 +14,9 @@
  * limitations under the License.
  */
 
-package org.wisepersist.settings.env;
-
 /**
- * This interface defines the type class for environment data information.
+ * This package contains Guice module related classes.
  *
  * @author jiakuan.wang@gmail.com
  */
-public interface EnvType {
-
-  /**
-   * Respond with the name of the environment.
-   * @return Name of environment.
-   */
-  String getName();
-
-  /**
-   * Respond with the configuration files resource paths.
-   * @return Array of file resource paths.
-   */
-  String[] getConfigFile();
-
-}
+package org.wisepersist.settings.guice;

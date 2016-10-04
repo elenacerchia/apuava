@@ -27,14 +27,14 @@ import com.google.inject.Singleton;
 @Singleton
 public class EnvConfigImpl implements EnvConfig {
 
-  private final Env env;
+  private final EnvType env;
 
   /**
    * Constructor for EnvironmentInfoService object.
    * @param env Is the environment type.
    */
   @Inject
-  public EnvConfigImpl(final Env env) {
+  public EnvConfigImpl(final EnvType env) {
     this.env = env;
   }
 
@@ -42,7 +42,7 @@ public class EnvConfigImpl implements EnvConfig {
    * To get the environment type set on object creation.
    * @return EnvironmentType of environment info.
    */
-  public final Env getEnv() {
+  public final EnvType getEnv() {
     return env;
   }
 
@@ -51,7 +51,7 @@ public class EnvConfigImpl implements EnvConfig {
    * @return Boolean value of evaluation.
    */
   public final boolean isProd() {
-    return EnvType.PROD.equals(env);
+    return EnvTypeImpl.PROD.equals(env);
   }
 
   /**
@@ -59,7 +59,7 @@ public class EnvConfigImpl implements EnvConfig {
    * @return Boolean value of evaluation.
    */
   public final boolean isStage() {
-    return EnvType.STAGE.equals(env);
+    return EnvTypeImpl.STAGE.equals(env);
   }
 
   /**
@@ -67,7 +67,7 @@ public class EnvConfigImpl implements EnvConfig {
    * @return Boolean value of evaluation.
    */
   public final boolean isDev() {
-    return EnvType.DEV.equals(env);
+    return EnvTypeImpl.DEV.equals(env);
   }
 
   /**
@@ -75,7 +75,7 @@ public class EnvConfigImpl implements EnvConfig {
    * @return Boolean value of evaluation.
    */
   public final boolean isTest() {
-    return EnvType.TEST.equals(env);
+    return EnvTypeImpl.TEST.equals(env);
   }
 
 }

@@ -17,8 +17,8 @@
 package org.wisepersist.settings;
 
 import org.testng.annotations.Test;
-import org.wisepersist.settings.env.Env;
 import org.wisepersist.settings.env.EnvType;
+import org.wisepersist.settings.env.EnvTypeImpl;
 
 import static org.testng.Assert.assertNotNull;
 
@@ -42,7 +42,7 @@ public class AbstractSettingsTest {
     settings2.ensureConfigNotNull();
     final AbstractSettings settings3 = new FileBasedAppConfig("/test/freemarker_test.html");
     settings3.ensureConfigNotNull();
-    final AbstractSettings settings4 = new FileBasedAppConfig(EnvType.TEST);
+    final AbstractSettings settings4 = new FileBasedAppConfig(EnvTypeImpl.TEST);
 
     // Then
     assertNotNull(settings1);
@@ -88,7 +88,7 @@ public class AbstractSettingsTest {
      *
      * @param env The env that contains the path of file to be loaded.
      */
-    private FileBasedAppConfig(final Env env) {
+    private FileBasedAppConfig(final EnvType env) {
       super(env);
     }
 

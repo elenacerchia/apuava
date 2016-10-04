@@ -34,7 +34,7 @@ public class EnvConfigImplTest {
    */
   @Test
   public final void testIsProd_shouldOnlyTrue() {
-    final Env expectedEnv = EnvType.PROD;
+    final EnvType expectedEnv = EnvTypeImpl.PROD;
     final EnvConfig envConfig = new EnvConfigImpl(expectedEnv);
 
     assertEquals(envConfig.getEnv(), expectedEnv);
@@ -49,7 +49,7 @@ public class EnvConfigImplTest {
    */
   @Test
   public final void testIsStage_shouldOnlyTrue() {
-    final Env expectedEnv = EnvType.STAGE;
+    final EnvType expectedEnv = EnvTypeImpl.STAGE;
     final EnvConfig envConfig = new EnvConfigImpl(expectedEnv);
 
     assertEquals(envConfig.getEnv(), expectedEnv);
@@ -64,7 +64,7 @@ public class EnvConfigImplTest {
    */
   @Test
   public final void testIsDev_shouldOnlyTrue() {
-    final Env expectedEnv = EnvType.DEV;
+    final EnvType expectedEnv = EnvTypeImpl.DEV;
     final EnvConfig envConfig = new EnvConfigImpl(expectedEnv);
 
     assertEquals(envConfig.getEnv(), expectedEnv);
@@ -79,7 +79,7 @@ public class EnvConfigImplTest {
    */
   @Test
   public final void testIsTest_shouldOnlyTrue() {
-    final Env expectedEnv = EnvType.TEST;
+    final EnvType expectedEnv = EnvTypeImpl.TEST;
     final EnvConfig envConfig = new EnvConfigImpl(expectedEnv);
 
     assertEquals(envConfig.getEnv(), expectedEnv);

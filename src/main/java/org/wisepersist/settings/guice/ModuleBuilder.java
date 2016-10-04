@@ -14,25 +14,33 @@
  * limitations under the License.
  */
 
-package org.wisepersist.settings.env;
+package org.wisepersist.settings.guice;
+
+import com.google.inject.Module;
+import com.google.inject.util.Modules;
 
 /**
- * This interface defines the type class for environment data information.
+ * Builder for building Guice module.
  *
  * @author jiakuan.wang@gmail.com
  */
-public interface Env {
+public class ModuleBuilder {
 
   /**
-   * Respond with the name of the environment.
-   * @return Name of environment.
+   * Builds a new Guice module with multiple modules given ignoring duplicate bindings.
+   *
+   * @param modules The modules specified.
+   * @return The new Guice module merged.
    */
-  String getName();
-
-  /**
-   * Respond with the configuration files resource paths.
-   * @return Array of file resource paths.
-   */
-  String[] getConfigFile();
-
+  public final Module build(final Module... modules) {
+    Module result = null;
+    for (final Module module : modules) {
+      if (result == null) {
+        result = module;
+      } else {
+        result = Modules.override(result).with(module);
+      }
+    }
+    return result;
+  }
 }
