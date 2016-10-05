@@ -4,11 +4,11 @@ Apuava is a utility module which contains reusable classes for Java applications
 
 Code coverage status:
 
-            'instruction': 86.02,
-            'branch'     : 77.5,
-            'line'       : 82.76,
-            'complexity' : 78.57,
-            'method'     : 79.69,
+            'instruction': 86.61,
+            'branch'     : 78.57,
+            'line'       : 83.52,
+            'complexity' : 79.31,
+            'method'     : 80.3,
             'class'      : 100.0
 
 ## Configure Maven dependency

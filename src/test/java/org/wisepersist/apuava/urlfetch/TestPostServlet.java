@@ -26,6 +26,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 /**
  * This servlet is for testing {@link UrlFetcher} with POST method.
  *
@@ -48,6 +50,7 @@ public class TestPostServlet extends HttpServlet {
    * @param resp The HTTP response specified.
    * @throws IOException If IO errors occur.
    */
+  @SuppressFBWarnings("XSS_REQUEST_PARAMETER_TO_SERVLET_WRITER")
   private void replayWithHeaders(final HttpServletRequest req, final HttpServletResponse resp)
       throws IOException {
     final Enumeration<String> headerNames = req.getHeaderNames();
