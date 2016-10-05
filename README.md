@@ -1,28 +1,28 @@
-# WisePersist-Settings
+# Apuava
 
-WisePersist Settings is a utility module which simplifies application configurations against different environments - test, dev, stage and prod.
+Apuava is a utility module which contains reusable classes for Java applications. For example, settings module can simplify application configurations against different environments - test, dev, stage and prod.
 
 Code coverage status:
 
-            'instruction': 80.04,
-            'branch'     : 71.88,
-            'line'       : 75.0,
-            'complexity' : 74.07,
-            'method'     : 76.32,
+            'instruction': 86.02,
+            'branch'     : 77.5,
+            'line'       : 82.76,
+            'complexity' : 78.57,
+            'method'     : 79.69,
             'class'      : 100.0
 
 ## Configure Maven dependency
 
 WisePersist is available in Maven central repository: 
 
-http://search.maven.org/#search%7Cga%7C1%7Cwisepersist-settings
+http://search.maven.org/#search%7Cga%7C1%7Capuava
 
 To add the dependency to your `build.gradle` (for Gradle projects) or `pom.xml` (for Maven projects), use the following configuration:
 
 For Gradle projects:
 
 ```
-compile 'org.wisepersist:wisepersist-settings:1.0.1'
+compile 'org.wisepersist:apuava:1.0.1'
 ```
 
 For Maven projects:
@@ -30,7 +30,7 @@ For Maven projects:
 ```
 <dependency>
     <groupId>org.wisepersist</groupId>
-    <artifactId>wisepersist-settings</artifactId>
+    <artifactId>apuava</artifactId>
     <version>1.0.1</version>
 </dependency>
 ```
@@ -40,7 +40,7 @@ If you would like to use the 1.0.2-SNAPSHOT release, use this configuration.
 For Gradle projects:
 
 ```
-compile 'org.wisepersist:wisepersist-settings:1.0.2-SNAPSHOT'
+compile 'org.wisepersist:apuava:1.0.2-SNAPSHOT'
 ```
 
 For Maven projects:
@@ -48,7 +48,7 @@ For Maven projects:
 ```
 <dependency>
     <groupId>org.wisepersist</groupId>
-    <artifactId>wisepersist-settings</artifactId>
+    <artifactId>apuava</artifactId>
     <version>1.0.2-SNAPSHOT</version>
 </dependency>
 ```
@@ -70,7 +70,7 @@ In order to use snapshot releases you also need to add the Sonatype snapshots re
 </repositories>
 ```
 
-## How to use WisePersist-Settings?
+## How to use Apuava?
 
 TBD
 
