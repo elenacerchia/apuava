@@ -37,6 +37,36 @@ public class TestPostServlet extends HttpServlet {
   @Override
   protected final void doPost(final HttpServletRequest req, final HttpServletResponse resp)
       throws ServletException, IOException {
+    replayWithHeaders(req, resp);
+    replyWIthQueryString(req, resp);
+  }
+
+  /**
+   * Replies with headers received.
+   *
+   * @param req The HTTP request specified.
+   * @param resp The HTTP response specified.
+   * @throws IOException If IO errors occur.
+   */
+  private void replayWithHeaders(final HttpServletRequest req, final HttpServletResponse resp)
+      throws IOException {
+    final Enumeration<String> headerNames = req.getHeaderNames();
+    while (headerNames.hasMoreElements()) {
+      final String name = headerNames.nextElement();
+      final String value = req.getHeader(name);
+      resp.getWriter().println(name + "=" + value);
+    }
+  }
+
+  /**
+   * Replies with query parameters received.
+   *
+   * @param req The HTTP request specified.
+   * @param resp The HTTP response specified.
+   * @throws IOException If IO errors occur.
+   */
+  private void replyWIthQueryString(final HttpServletRequest req, final HttpServletResponse resp)
+      throws IOException {
     final Enumeration<String> parameterNames = req.getParameterNames();
     final UrlFetcher urlFetcher = new UrlFetcher();
     while (parameterNames.hasMoreElements()) {
@@ -44,6 +74,6 @@ public class TestPostServlet extends HttpServlet {
       final String value = req.getParameter(name);
       urlFetcher.addParam(name, value);
     }
-    resp.getWriter().print(urlFetcher.getQueryString());
+    resp.getWriter().println(urlFetcher.getQueryString());
   }
 }

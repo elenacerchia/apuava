@@ -18,6 +18,7 @@ package org.wisepersist.apuava.urlfetch;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
 
 import org.apache.commons.io.IOUtils;
 import org.wisepersist.apuava.resource.ResourceHandler;
@@ -35,7 +36,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.AbstractMap;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -54,7 +54,8 @@ public class UrlFetcher {
   private int readTimeout = UrlFetcher.READ_TIMEOUT;
   private int connectTimeout = UrlFetcher.CONNECT_TIMEOUT;
   private RequestMethod requestMethod = RequestMethod.GET;
-  private List<AbstractMap.SimpleEntry<String, String>> params = new ArrayList<>();
+  private List<AbstractMap.SimpleEntry<String, String>> headers = Lists.newArrayList();
+  private List<AbstractMap.SimpleEntry<String, String>> params = Lists.newArrayList();
   private ResourceManager resourceManager = new ResourceManager();
 
   /**
@@ -108,6 +109,18 @@ public class UrlFetcher {
    * @param value The parameter value specified.
    * @return This URL fetcher.
    */
+  public final UrlFetcher addHeader(final String name, final String value) {
+    this.headers.add(new AbstractMap.SimpleEntry<>(name, value));
+    return this;
+  }
+
+  /**
+   * Adds a new parameter to this URL fetcher.
+   *
+   * @param name The parameter name specified.
+   * @param value The parameter value specified.
+   * @return This URL fetcher.
+   */
   public final UrlFetcher addParam(final String name, final String value) {
     this.params.add(new AbstractMap.SimpleEntry<>(name, value));
     return this;
@@ -144,10 +157,22 @@ public class UrlFetcher {
     conn.setRequestMethod(requestMethod.name());
     conn.setDoInput(true);
     conn.setDoOutput(true);
+    setHeaders(conn);
     if (requestMethod == RequestMethod.POST) {
       writeToConnection(conn, queryStr);
     }
     return conn;
+  }
+
+  /**
+   * Sets headers in HTTP connection.
+   *
+   * @param conn The HTTP connection specified.
+   */
+  private void setHeaders(final HttpURLConnection conn) {
+    for (final AbstractMap.SimpleEntry<String, String> header : headers) {
+      conn.setRequestProperty(header.getKey(), header.getValue());
+    }
   }
 
   /**

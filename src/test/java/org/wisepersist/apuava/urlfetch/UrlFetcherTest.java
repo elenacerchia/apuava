@@ -64,6 +64,30 @@ public class UrlFetcherTest extends AbstractHttpServerSupport {
    * @throws Exception If uncaught errors occur.
    */
   @Test
+  public final void testExecute_shouldReturnHeadersWithPostMethod() throws Exception {
+    // Given
+    final String headerName = "Content-Type";
+    final String headerValue = "application/x-www-form-urlencoded";
+    final UrlFetcher urlFetcher = new UrlFetcher().setUrl(getBaseUrl() + "/testpost")
+        .setRequestMethod(UrlFetcher.RequestMethod.POST)
+        .addHeader(headerName, headerValue);
+
+    // When
+    final UrlFetcher.Response response = urlFetcher.execute();
+
+    // Then
+    final int expectedCode = 200;
+    assertEquals(response.getStatusCode(), expectedCode);
+    assertTrue(response.getContent().contains(headerName + "=" + headerValue));
+  }
+
+  /**
+   * Tests {@link UrlFetcher#execute()} method, which should return the welcome message
+   * when GET method is used..
+   *
+   * @throws Exception If uncaught errors occur.
+   */
+  @Test
   public final void testExecute_shouldReturnQueryStringWithPostMethod() throws Exception {
     // Given
     final List<AbstractMap.SimpleEntry<String, String>> params = buildParams();
