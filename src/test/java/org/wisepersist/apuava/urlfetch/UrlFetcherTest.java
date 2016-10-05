@@ -45,8 +45,8 @@ public class UrlFetcherTest extends AbstractHttpServerSupport {
   public final void testExecute_shouldReturnWelcomeMessageWithGetMethod() throws Exception {
     // Given
     final UrlFetcher urlFetcher = new UrlFetcher()
-        .withUrl(getBaseUrl() + "/testget")
-        .withRequestMethod(UrlFetcher.RequestMethod.GET);
+        .setUrl(getBaseUrl() + "/testget")
+        .setRequestMethod(UrlFetcher.RequestMethod.GET);
 
     // When
     final UrlFetcher.Response response = urlFetcher.execute();
@@ -67,8 +67,8 @@ public class UrlFetcherTest extends AbstractHttpServerSupport {
   public final void testExecute_shouldReturnQueryStringWithPostMethod() throws Exception {
     // Given
     final List<AbstractMap.SimpleEntry<String, String>> params = buildParams();
-    final UrlFetcher urlFetcher = new UrlFetcher().withUrl(getBaseUrl() + "/testpost")
-        .withRequestMethod(UrlFetcher.RequestMethod.POST);
+    final UrlFetcher urlFetcher = new UrlFetcher().setUrl(getBaseUrl() + "/testpost")
+        .setRequestMethod(UrlFetcher.RequestMethod.POST);
     for (final AbstractMap.SimpleEntry<String, String> param : params) {
       urlFetcher.addParam(param.getKey(), param.getValue());
     }

@@ -123,8 +123,8 @@ public abstract class AbstractHttpServerSupport {
       Thread.sleep(twoSeconds);
       try {
         count += 1;
-        final String responseContent = urlFetcher.withUrl(getBaseUrl())
-            .withRequestMethod(UrlFetcher.RequestMethod.GET).execute().getContent();
+        final String responseContent = urlFetcher.setUrl(getBaseUrl())
+            .setRequestMethod(UrlFetcher.RequestMethod.GET).execute().getContent();
         started = StringUtils.equals(getWelcomeServiceMessage(), responseContent);
       } catch (final IOException ex) {
         log.info("Waiting Jetty to be started... count=" + count);

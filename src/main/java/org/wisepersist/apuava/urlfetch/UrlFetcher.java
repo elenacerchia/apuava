@@ -63,7 +63,7 @@ public class UrlFetcher {
    * @param theUrl The URL specified.
    * @return This URL fetcher.
    */
-  public final UrlFetcher withUrl(final String theUrl) {
+  public final UrlFetcher setUrl(final String theUrl) {
     this.url = theUrl;
     return this;
   }
@@ -74,7 +74,7 @@ public class UrlFetcher {
    * @param theReadTimeout The read timeout specified.
    * @return This URL fetcher.
    */
-  public final UrlFetcher withReadTimeout(final int theReadTimeout) {
+  public final UrlFetcher setReadTimeout(final int theReadTimeout) {
     this.readTimeout = theReadTimeout;
     return this;
   }
@@ -85,7 +85,7 @@ public class UrlFetcher {
    * @param theConnectTimeout The connect timeout specified.
    * @return This URL fetcher.
    */
-  public final UrlFetcher withConnectTimeout(final int theConnectTimeout) {
+  public final UrlFetcher setConnectTimeout(final int theConnectTimeout) {
     this.connectTimeout = theConnectTimeout;
     return this;
   }
@@ -96,7 +96,7 @@ public class UrlFetcher {
    * @param theRequestMethod The request method specified.
    * @return This URL fetcher.
    */
-  public final UrlFetcher withRequestMethod(final RequestMethod theRequestMethod) {
+  public final UrlFetcher setRequestMethod(final RequestMethod theRequestMethod) {
     this.requestMethod = theRequestMethod;
     return this;
   }
