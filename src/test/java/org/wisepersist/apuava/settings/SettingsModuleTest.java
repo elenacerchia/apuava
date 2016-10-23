@@ -27,7 +27,7 @@ import static org.testng.Assert.assertNotNull;
 /**
  * Unit tests for {@link AbstractSettingsModule} class.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public class SettingsModuleTest {
 

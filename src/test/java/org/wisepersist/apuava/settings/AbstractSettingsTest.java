@@ -25,7 +25,7 @@ import static org.testng.Assert.assertNotNull;
 /**
  * Unit tests for {@link AbstractSettings} class.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 @SuppressWarnings("AbstractClassName")
 public class AbstractSettingsTest {
@@ -70,7 +70,7 @@ public class AbstractSettingsTest {
   /**
    * Test impl class for {@link AbstractSettings}.
    *
-   * @author jiakuan.wang@gmail.com
+   * @author delight.wjk@gmail.com
    */
   private static final class FileBasedAppConfig extends AbstractSettings {
 

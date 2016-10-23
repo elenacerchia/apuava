@@ -19,7 +19,7 @@ package org.wisepersist.apuava.settings;
 /**
  * Interface for environment configuration getter.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public interface Settings {
 

@@ -25,7 +25,7 @@ import org.wisepersist.apuava.settings.env.EnvTypeImpl;
 /**
  * Abstract settings module which supports env identification.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public abstract class AbstractSettingsModule extends AbstractModule {
 

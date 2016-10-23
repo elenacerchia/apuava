@@ -22,7 +22,7 @@ import com.google.inject.Singleton;
 /**
  * Implementation of {@link EnvConfig} interface.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 @Singleton
 public class EnvConfigImpl implements EnvConfig {

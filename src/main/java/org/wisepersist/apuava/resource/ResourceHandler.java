@@ -22,7 +22,7 @@ import java.io.IOException;
 /**
  * Resource handler interface whose implementation will contain actual resource processing logic.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  * @param <T> The result type.
  */
 public interface ResourceHandler<T> {

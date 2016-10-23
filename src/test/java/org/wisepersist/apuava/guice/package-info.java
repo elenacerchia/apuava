@@ -17,6 +17,6 @@
 /**
  * This package contains unit tests of Guice module classes.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 package org.wisepersist.apuava.guice;

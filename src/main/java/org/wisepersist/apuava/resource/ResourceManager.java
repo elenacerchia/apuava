@@ -25,7 +25,7 @@ import java.io.IOException;
 /**
  * Resource manager to isolate the auto-closing logic in a separate class.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public class ResourceManager {
 

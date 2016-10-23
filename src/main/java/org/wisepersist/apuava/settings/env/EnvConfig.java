@@ -19,7 +19,7 @@ package org.wisepersist.apuava.settings.env;
 /**
  * This interface contains methods to identify the current environment.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public interface EnvConfig {
 

@@ -22,7 +22,7 @@ import com.google.inject.util.Modules;
 /**
  * Builder for building Guice module.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public class ModuleBuilder {
 

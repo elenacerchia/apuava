@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Welcome servlet.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 @Singleton
 public class TestWelcomeServlet extends HttpServlet {

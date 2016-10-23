@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * This servlet is for testing {@link UrlFetcher} with GET method.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 @Singleton
 public class TestGetServlet extends HttpServlet {

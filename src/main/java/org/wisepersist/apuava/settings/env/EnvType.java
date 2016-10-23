@@ -19,7 +19,7 @@ package org.wisepersist.apuava.settings.env;
 /**
  * This interface defines the type class for environment data information.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public interface EnvType {
 

@@ -17,6 +17,6 @@
 /**
  * This package contains classes for testing {@link org.wisepersist.apuava.urlfetch.UrlFetcher}.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 package org.wisepersist.apuava.urlfetch;

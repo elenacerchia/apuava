@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Guice configuration for unit tests.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public class TestAppGuiceConfig extends GuiceServletContextListener {
 

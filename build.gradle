@@ -16,6 +16,7 @@
 
 buildscript {
     repositories {
+        mavenLocal()
         mavenCentral()
         jcenter()
         maven {
@@ -30,6 +31,10 @@ buildscript {
     }
 }
 
+plugins {
+    id 'net.researchgate.release' version '2.4.0'
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'maven'
@@ -37,7 +42,7 @@ apply plugin: 'signing'
 
 group = 'org.wisepersist'
 archivesBaseName = 'apuava'
-version = '1.0.3-SNAPSHOT'
+version = "$version"
 
 def skip_quality_check = project.hasProperty('check') && check == 'false'
 println("skip_quality_check: " + skip_quality_check)
@@ -61,6 +66,7 @@ project.extensions.idea.module.iml {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
@@ -195,7 +201,7 @@ uploadArchives {
                     developer {
                         id 'jiakuan'
                         name 'Jiakuan Wang'
-                        email 'jiakuan.wang@gmail.com'
+                        email 'delight.wjk@gmail.com'
                         organization 'WisePersist.org'
                         organizationUrl 'http://appconfig.wisepersist.org'
                         roles {

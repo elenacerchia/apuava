@@ -18,6 +18,6 @@
  * This package contains URLFetch related classes, which will be available for use
  * in Google AppEngine.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 package org.wisepersist.apuava.urlfetch;

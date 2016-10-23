@@ -34,7 +34,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 /**
  * Support class for Http integration tests.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public abstract class AbstractHttpServerSupport {
 
@@ -124,7 +124,7 @@ public abstract class AbstractHttpServerSupport {
       try {
         count += 1;
         final String responseContent = urlFetcher.setUrl(getBaseUrl())
-            .setRequestMethod(UrlFetcher.RequestMethod.GET).execute().getContent();
+            .setRequestMethod(RequestMethod.GET).execute().getContent();
         started = StringUtils.equals(getWelcomeServiceMessage(), responseContent);
       } catch (final IOException ex) {
         log.info("Waiting Jetty to be started... count=" + count);

@@ -36,7 +36,7 @@ import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 /**
  * The abstract class for most used config getter methods.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public abstract class AbstractSettings implements Settings { //NOPMD
 

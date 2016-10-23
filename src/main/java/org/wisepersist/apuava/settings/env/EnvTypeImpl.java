@@ -23,7 +23,7 @@ import java.util.Arrays;
 /**
  * Has list of supported environments and list of configs.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public enum EnvTypeImpl implements EnvType {
 

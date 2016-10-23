@@ -28,7 +28,7 @@ import static org.testng.Assert.assertTrue;
 /**
  * Test for EnvType class.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public class EnvTypeImplTest {
 

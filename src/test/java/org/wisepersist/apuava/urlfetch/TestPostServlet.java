@@ -31,7 +31,7 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 /**
  * This servlet is for testing {@link UrlFetcher} with POST method.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 @Singleton
 public class TestPostServlet extends HttpServlet {

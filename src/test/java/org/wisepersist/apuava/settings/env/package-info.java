@@ -17,6 +17,6 @@
 /**
  * Root package of WisePersist app config classes.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 package org.wisepersist.apuava.settings.env;

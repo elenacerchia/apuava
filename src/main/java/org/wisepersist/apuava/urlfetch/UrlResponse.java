@@ -14,24 +14,34 @@
  * limitations under the License.
  */
 
-package org.wisepersist.apuava.resource;
-
-import java.io.Closeable;
-import java.io.IOException;
+package org.wisepersist.apuava.urlfetch;
 
 /**
- * Void resource handler interface whose implementation will contain actual resource
- * processing logic.
+ * Response of http requests.
  *
  * @author delight.wjk@gmail.com
  */
-public interface VoidResourceHandler {
+public class UrlResponse {
+
+  private int statusCode;
+  private String content;
 
   /**
-   * Handles the resource without any return value.
+   * Constructs a new {@link UrlResponse} instance.
    *
-   * @param closeable The closeable resource specified.
-   * @throws IOException If IO errors occur.
+   * @param statusCode The status code specified.
+   * @param content The content string specified.
    */
-  void handle(Closeable closeable) throws IOException;
+  public UrlResponse(final int statusCode, final String content) {
+    this.statusCode = statusCode;
+    this.content = content;
+  }
+
+  public final int getStatusCode() {
+    return statusCode;
+  }
+
+  public final String getContent() {
+    return content;
+  }
 }

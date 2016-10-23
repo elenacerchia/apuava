@@ -14,37 +14,39 @@
  * limitations under the License.
  */
 
-package org.wisepersist.apuava.guice;
-
-import com.google.inject.Module;
+package org.wisepersist.apuava.urlfetch;
 
 import org.testng.annotations.Test;
 
-import static org.mockito.Mockito.mock;
-import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertEquals;
 
 /**
- * Unit tests for {@link ModuleBuilder} class.
+ * Unit tests for {@link RequestMethod} class.
  *
  * @author delight.wjk@gmail.com
  */
-public class ModuleBuilderTest {
+public class RequestMethodTest {
 
   /**
-   * Tests {@link ModuleBuilder#build(Module...)} method.
+   * Tests {@link RequestMethod#values()} method.
    *
    * @throws Exception If uncaught errors occur.
    */
   @Test
-  public final void testBuild() throws Exception {
-    // Given
-    final ModuleBuilder builder = new ModuleBuilder();
+  public final void testValues() throws Exception {
+    final RequestMethod[] values = RequestMethod.values();
+    assertEquals(values.length, 2);
+  }
 
-    // When
-    final Module module = builder.build(
-        mock(Module.class), mock(Module.class), mock(Module.class), mock(Module.class));
-
-    // Then
-    assertNotNull(module);
+  /**
+   * Tests {@link RequestMethod#valueOf(String)} method.
+   *
+   * @throws Exception If uncaught errors occur.
+   */
+  @Test
+  public final void testValueOf() throws Exception {
+    final RequestMethod requestMethod = RequestMethod.POST;
+    final RequestMethod valueOf = RequestMethod.valueOf(requestMethod.name());
+    assertEquals(valueOf, requestMethod);
   }
 }

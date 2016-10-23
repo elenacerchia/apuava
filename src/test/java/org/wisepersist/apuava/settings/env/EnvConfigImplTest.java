@@ -25,7 +25,7 @@ import static org.testng.Assert.assertTrue;
 /**
  * Unit tests for {@link EnvConfigImpl} class.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public class EnvConfigImplTest {
 

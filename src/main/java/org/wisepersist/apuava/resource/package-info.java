@@ -17,6 +17,6 @@
 /**
  * This package contains common resource management classes.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 package org.wisepersist.apuava.resource;

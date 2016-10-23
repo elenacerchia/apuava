@@ -42,7 +42,7 @@ import java.util.List;
  * URL Fetcher which can send GET and POST requests using core JDK API. It can be used
  * in Google AppEngine.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 @SuppressWarnings("ClassDataAbstractionCoupling")
 public class UrlFetcher {
@@ -132,7 +132,7 @@ public class UrlFetcher {
    * @return The response of the HTTP request.
    * @throws IOException If IO errors occur.
    */
-  public final Response execute() throws IOException {
+  public final UrlResponse execute() throws IOException {
     Preconditions.checkNotNull(url);
     final HttpURLConnection conn = prepareConnection();
     conn.connect();
@@ -182,10 +182,10 @@ public class UrlFetcher {
    * @return Response object.
    * @throws IOException If IO errors occur.
    */
-  private Response readResponse(final HttpURLConnection conn) throws IOException {
+  private UrlResponse readResponse(final HttpURLConnection conn) throws IOException {
     final int responseCode = conn.getResponseCode();
     final String content = readContent(conn);
-    return new Response(responseCode, content);
+    return new UrlResponse(responseCode, content);
   }
 
   /**
@@ -263,51 +263,5 @@ public class UrlFetcher {
       result.append(URLEncoder.encode(pair.getValue(), "UTF-8"));
     }
     return result.toString();
-  }
-
-  /**
-   * Defines request method.
-   *
-   * @author jiakuan.wang@gmail.com
-   */
-  public enum RequestMethod {
-    /**
-     * Http GET method.
-     */
-    GET,
-    /**
-     * Http POST method.
-     */
-    POST
-  }
-
-  /**
-   * Response of http requests.
-   *
-   * @author jiakuan.wang@gmail.com
-   */
-  public static class Response {
-
-    private int statusCode;
-    private String content;
-
-    /**
-     * Constructs a new {@link Response} instance.
-     *
-     * @param statusCode The status code specified.
-     * @param content The content string specified.
-     */
-    public Response(final int statusCode, final String content) {
-      this.statusCode = statusCode;
-      this.content = content;
-    }
-
-    public final int getStatusCode() {
-      return statusCode;
-    }
-
-    public final String getContent() {
-      return content;
-    }
   }
 }

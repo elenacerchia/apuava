@@ -17,6 +17,6 @@
 /**
  * This package contains environment related classes.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 package org.wisepersist.apuava.settings.env;

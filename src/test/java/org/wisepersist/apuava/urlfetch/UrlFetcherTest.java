@@ -31,7 +31,7 @@ import static org.testng.Assert.assertTrue;
 /**
  * Unit tests for {@link UrlFetcher} class.
  *
- * @author jiakuan.wang@gmail.com
+ * @author delight.wjk@gmail.com
  */
 public class UrlFetcherTest extends AbstractHttpServerSupport {
 
@@ -46,10 +46,10 @@ public class UrlFetcherTest extends AbstractHttpServerSupport {
     // Given
     final UrlFetcher urlFetcher = new UrlFetcher()
         .setUrl(getBaseUrl() + "/testget")
-        .setRequestMethod(UrlFetcher.RequestMethod.GET);
+        .setRequestMethod(RequestMethod.GET);
 
     // When
-    final UrlFetcher.Response response = urlFetcher.execute();
+    final UrlResponse response = urlFetcher.execute();
 
     // Then
     final int expectedCode = 200;
@@ -69,11 +69,11 @@ public class UrlFetcherTest extends AbstractHttpServerSupport {
     final String headerName = "Content-Type";
     final String headerValue = "application/x-www-form-urlencoded";
     final UrlFetcher urlFetcher = new UrlFetcher().setUrl(getBaseUrl() + "/testpost")
-        .setRequestMethod(UrlFetcher.RequestMethod.POST)
+        .setRequestMethod(RequestMethod.POST)
         .addHeader(headerName, headerValue);
 
     // When
-    final UrlFetcher.Response response = urlFetcher.execute();
+    final UrlResponse response = urlFetcher.execute();
 
     // Then
     final int expectedCode = 200;
@@ -91,14 +91,15 @@ public class UrlFetcherTest extends AbstractHttpServerSupport {
   public final void testExecute_shouldReturnQueryStringWithPostMethod() throws Exception {
     // Given
     final List<AbstractMap.SimpleEntry<String, String>> params = buildParams();
+    final int timeout = 5000;
     final UrlFetcher urlFetcher = new UrlFetcher().setUrl(getBaseUrl() + "/testpost")
-        .setRequestMethod(UrlFetcher.RequestMethod.POST);
+        .setConnectTimeout(timeout).setReadTimeout(timeout).setRequestMethod(RequestMethod.POST);
     for (final AbstractMap.SimpleEntry<String, String> param : params) {
       urlFetcher.addParam(param.getKey(), param.getValue());
     }
 
     // When
-    final UrlFetcher.Response response = urlFetcher.execute();
+    final UrlResponse response = urlFetcher.execute();
 
     // Then
     final int expectedCode = 200;
