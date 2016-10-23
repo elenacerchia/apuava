@@ -22,7 +22,7 @@ To add the dependency to your `build.gradle` (for Gradle projects) or `pom.xml` 
 For Gradle projects:
 
 ```
-compile 'org.wisepersist:apuava:1.0.2'
+compile 'org.wisepersist:apuava:1.0.3'
 ```
 
 For Maven projects:
@@ -31,16 +31,16 @@ For Maven projects:
 <dependency>
     <groupId>org.wisepersist</groupId>
     <artifactId>apuava</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
-If you would like to use the 1.0.3-SNAPSHOT release, use this configuration.
+If you would like to use the 1.0.4-SNAPSHOT release, use this configuration.
 
 For Gradle projects:
 
 ```
-compile 'org.wisepersist:apuava:1.0.3-SNAPSHOT'
+compile 'org.wisepersist:apuava:1.0.4-SNAPSHOT'
 ```
 
 For Maven projects:
@@ -49,7 +49,7 @@ For Maven projects:
 <dependency>
     <groupId>org.wisepersist</groupId>
     <artifactId>apuava</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
 </dependency>
 ```
 
